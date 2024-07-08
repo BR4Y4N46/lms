@@ -5,18 +5,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
     // Recoger los datos del formulario
     $name = $_POST['name'];
-   // $subject = $_POST['subject'];
+   $subject = $_POST['subject'];
     $email = $_POST['email'];
     $message = $_POST['message'];
 
     // Escapar los valores para prevenir inyecciones SQL (opcional, depende del contexto)
     $name = mysqli_real_escape_string($conn, $name);
-    //$subject = mysqli_real_escape_string($conn, $subject);
+    $subject = mysqli_real_escape_string($conn, $subject);
     $email = mysqli_real_escape_string($conn, $email);
     $message = mysqli_real_escape_string($conn, $message);
 
     // Preparar la consulta SQL para insertar los datos
-    $sql = "INSERT INTO forms (name,email, comentario) VALUES ('$name','$email', '$message')";
+    $sql = "INSERT INTO forms (name,subject,email, comentario) VALUES ('$name','$subject','$email', '$message')";
 
     // Ejecutar la consulta
     if (mysqli_query($conn, $sql)) {

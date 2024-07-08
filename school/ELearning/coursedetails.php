@@ -29,7 +29,7 @@
                     <p class="card-text"> Description: '.$row['course_desc'].'</p>
                     <p class="card-text"> Duration: '.$row['course_duration'].'</p>
                     <form action="checkout.php" method="post">
-                      <p class="card-text d-inline">Price: <small><del>&#8377 '.$row['course_original_price'].'</del></small> <span class="font-weight-bolder">&#8377 '.$row['course_price'].'<span></p>
+                      <p class="card-text d-inline">Price: <small><del>&dollar; '.$row['course_original_price'].'</del></small> <span class="font-weight-bolder">&dollar;'.$row['course_price'].'<span></p>
                       <input type="hidden" name="id" value='. $row["course_price"] .'> 
                       <button type="submit" class="btn btn-primary text-white font-weight-bolder float-right" name="buy">Buy Now</button>
                     </form>

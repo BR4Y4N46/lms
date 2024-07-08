@@ -82,10 +82,16 @@ include('../dbConnection.php');
       <input type="text" class="form-control" id="course_price" name="course_price" onkeypress="isInputNumber(event)" value="<?php if(isset($row['course_price'])) {echo $row['course_price']; }?>">
     </div>
     <div class="form-group">
-      <label for="course_img">Course Image</label>
-      <img src="<?php if(isset($row['course_img'])) {echo $row['course_img']; }?>" alt="courseimage" class="img-thumbnail">     
-      <input type="file" class="form-control-file" id="course_img" name="course_img">
-    </div>
+  <label for="course_img">Course Image</label> <br>
+  <img src="<?php if(isset($row['course_img'])) {echo $row['course_img']; }?>" alt="courseimage" class="img-thumbnail"> 
+  <hr>    
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="course_img" name="course_img">
+    <label class="custom-file-label" for="course_img">Choose file</label>
+  </div>
+</div>
+
+
 
     <div class="text-center">
       <button type="submit" class="btn btn-danger" id="requpdate" name="requpdate">Update</button>
